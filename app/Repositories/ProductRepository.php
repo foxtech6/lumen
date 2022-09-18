@@ -2,20 +2,12 @@
 
 namespace App\Repositories;
 
-use Nahid\JsonQ\Jsonq;
 use Nahid\QArray\Clause;
 use Nahid\QArray\Exceptions\InvalidNodeException;
 
-class ProductRepository
+class ProductRepository extends RepositoryAbstract
 {
     public const PRODUCT_KEY = 'products';
-
-    private Jsonq $builder;
-
-    public function __construct()
-    {
-        $this->builder = new Jsonq('/var/www/html/database/data/products.json');
-    }
 
     /**
      * @throws InvalidNodeException
@@ -33,6 +25,11 @@ class ProductRepository
         }
 
         return $collection->get()->result();
+    }
+
+    protected function getDataFileName(): string
+    {
+        return self::PRODUCT_KEY;
     }
 
     /**

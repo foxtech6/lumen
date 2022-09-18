@@ -10,7 +10,7 @@ class Controller extends BaseController
     /**
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function main(): JsonResponse
     {
         return response()->json([
             'Welcome to MYTHERESA API',
@@ -23,7 +23,7 @@ class Controller extends BaseController
                         'priceLessThan' => 'Can be filtered by priceLessThan as a query string parameter, '
                             . 'this filter applies before discounts are applied and will show products with prices '
                             . 'lesser than or equal the value provided',
-                    ],
+                    ]
                 ]
             ]
         ]);
