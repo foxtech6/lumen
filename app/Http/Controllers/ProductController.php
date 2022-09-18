@@ -40,9 +40,9 @@ class ProductController extends Controller
             return $validator->errors();
         }
 
-        return response()->json($transformer
-            ->setLimit(ProductCollectionTransformer::PRODUCTS_SIZE_RESPONSE)
-            ->transform($action->run($request->get('category'), $request->get('priceLessThan')))
-        );
+        return response()->json($transformer->transform($action->run(
+            $request->get('category'),
+            $request->get('priceLessThan')
+        )));
     }
 }

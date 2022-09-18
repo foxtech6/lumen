@@ -13,6 +13,8 @@
 |
 */
 
-$router->get('/', 'Controller@index');
+$router->get('/', function () {
+    return config('documentation');
+});
 
 $router->get('products', 'ProductController@index');

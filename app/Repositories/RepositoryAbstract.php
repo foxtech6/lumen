@@ -14,8 +14,8 @@ abstract class RepositoryAbstract
     {
         $this->path = sprintf(
             '%s/%s/%s.json',
-            env('ROOT_PATH', '/var/www/html'),
-            env('DATA_PATH', 'database/data'),
+            config('data.root_path', '/var/www/html'),
+            config('data.data_path', 'database/data'),
             $this->getDataFileName(),
         );
 
