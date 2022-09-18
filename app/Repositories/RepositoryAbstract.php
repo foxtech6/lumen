@@ -12,14 +12,26 @@ abstract class RepositoryAbstract
 
     public function __construct()
     {
+        $this->buildPath()->build();
+    }
+
+    public function buildPath(string $dataPath = null): self
+    {
         $this->path = sprintf(
             '%s/%s/%s.json',
             config('data.root_path', '/var/www/html'),
-            config('data.data_path', 'database/data'),
+            $dataPath ?: config('data.data_path', 'database/data'),
             $this->getDataFileName(),
         );
 
+        return $this;
+    }
+
+    public function build(): self
+    {
         $this->builder = new Jsonq($this->path);
+
+        return $this;
     }
 
     abstract protected function getDataFileName(): string;
