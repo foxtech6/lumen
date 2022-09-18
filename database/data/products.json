@@ -1,0 +1,26 @@
+{
+    "products" : [
+        {
+            "sku": "000001",
+            "name": "BV Lean leather ankle boots",
+            "category": "boots1",
+            "price": {
+                "original": 89000,
+                "final": 62300,
+                "discount_percentage": "30%",
+                "currency": "EUR"
+            }
+        },
+        {
+            "sku": "000002",
+            "name": "BV Lean leather ankle boots",
+            "category": "boots",
+            "price": {
+                "original": 89001,
+                "final": 89000,
+                "discount_percentage": null,
+                "currency": "EUR"
+            }
+        }
+    ]
+}

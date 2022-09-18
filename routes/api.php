@@ -13,4 +13,4 @@
 |
 */
 
-$router->get('/', 'ExampleController@index');
+$router->get('products', 'ProductController@index');
